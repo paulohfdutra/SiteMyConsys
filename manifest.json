@@ -1,0 +1,32 @@
+{
+    "name": "Myconsys | Seu Consys, na palma da sua mão",
+    "short_name": "Myconsys",
+    "description": "Com o MyConsys você tem acesso a dashboards com as principais informações do seu sistema. Acesse pelo computador, tablet e/ou smartphone.",
+    "lang": "pt-BR",
+    "orientation": "portrait",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#825ee4",
+    "icons": [
+      {
+        "src": "/assets/favicon/android-chrome-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/assets/favicon/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "screenshots": [
+    {
+      "src": "/assets/img/template/examples/home_11.png",
+      "sizes": "1916x1079",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ]
+  }
+  

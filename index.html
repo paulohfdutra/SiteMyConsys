@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="assets/favicon/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Home MyConsys - Plataforma da Consys</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/landing-page.css" rel="stylesheet" />
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300' rel='stylesheet' type='text/css'>
+    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+
+
+    <link rel="manifest" href="./manifest.json">
+
+
+    <style>
+        /* Estilos para o Modo Noturno */
+        .fade {
+            transition: opacity 0.5s linear;
+        }
+
+        body.dark-mode {
+            background-color: #111c44;
+            color: #bac0d9;
+            transition: opacity 0.5s linear;
+        }
+
+        body.dark-mode .header-text {
+            color: #ffffff;
+            transition: opacity 0.5s linear;
+        }
+
+        body.dark-mode .section-features .card p {
+            color: #bac0d9;
+            transition: opacity 0.5s linear;
+        }
+
+        body.dark-mode .section-gray {
+            background-color: #051139 !important;
+            transition: opacity 0.5s linear;
+        }
+
+        body.dark-mode .filter-gradient.blue:after {
+            background: linear-gradient(220deg, #336699 0%, #333366 55%, #4c267d 100%);
+            transition: opacity 0.5s linear;
+        }
+
+        body.dark-mode .btn-info.btn-fill {
+            background-color: #4a5681;
+            border-color: #5f6ea2;
+            transition: opacity 0.5s linear;
+        }
+
+        body.dark-mode .footer {
+            background-color: #111c44;
+            transition: opacity 0.5s linear;
+        }
+
+        body.dark-mode .floating-button {
+            background-color: #2ba8dc;
+        }
+
+        body.dark-mode .floating-button i {
+            opacity: 1;
+            color: #ffc107;
+        }
+
+        body.dark-mode .floating-button:hover,
+        body.dark-mode .floating-button:focus {
+            color: #ffae00;
+            text-decoration: none;
+            background-color: #008ed0;
+        }
+
+        .fixed-bottom {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 85%;
+            z-index: 1050;
+            text-align: center;
+        }
+
+        /* Estilos para o loading */
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            color: #333;
+            z-index: 9999;
+            display: none;
+            /* Escondido por padrão */
+        }
+    </style>
+
+</head>
+
+<body class="landing-page landing-page1">
+    <a href="#" id="btnModoNoturno1" class="floating-button">
+        <i class="fa fa-moon-o"></i> <!-- ícone de lua -->
+    </a>
+    <div id="loading"><img style="width: 200px;" src="assets/img/template/loading.gif">
+    </div>
+    <nav class="navbar navbar-transparent navbar-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#example">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar bar1"></span>
+                    <span class="icon-bar bar2"></span>
+                    <span class="icon-bar bar3"></span>
+                </button>
+                <a href="https://consysonline.com.br/sitenovo/index.html" target="_blank">
+                    <div class="logo-container">
+                        <div class="logo-consys">
+                            <img class="w-100" src="assets/img/logos/Logo_white.svg" alt="Consys Logo">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="example">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="https://api.whatsapp.com/send/?phone=552721239990&text=Eu+tenho+interesse+no+myConsys&type=phone_number&app_absent=0"
+                            target="_blank" class="btn btn-portal btn-lg" style="padding: 13px 13px !important;">
+                            <img src="assets/img/template/whatsapp.svg" width="25px">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://myconsys.consysonline.com.br/login.php" target="_blank"
+                            class="btn btn-portal btn-lg">Efetuar login</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    <div class="wrapper">
+        <div class="parallax filter-gradient blue" data-color="blue">
+            <div class="parallax-background"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 hidden-xs">
+                        <div class="parallax-image">
+                            <img id="phoneImage" class="phone" src="assets/img/template/iphone3.png"
+                                style="margin-top: 20px" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="description">
+                            <img id="logoImage" src="assets/img/logos/Logo_color_white.svg" alt="MyConsys"
+                                style="width: 340px; filter: drop-shadow(2px 5px 10px #110d41)">
+                            <h3 class="text-white"> Seu Consys, na palma da sua mão</h3>
+                            <br>
+                            <p class="text-justify" style="line-height: 1.7;">Com o MyConsys, você pode acessar o
+                                dashboard com as principais informações da(s) sua(s) loja(s), tudo online. A plataforma
+                                permite uma visualização clara e objetiva dos dados, facilitando a gestão e o
+                                acompanhamento das métricas importantes para o seu negócio.</p>
+                        </div>
+                        <div class="buttons">
+                            <p class="text-white small"
+                                style="line-height: 2; text-align: justify; margin-bottom: 30px;">Acesse pelo navegador
+                                do seu smartphone,
+                                tablet ou computador e
+                                adicione o MyConsys à sua Tela de Início. Assim, ele funcionará como um aplicativo
+                                nativo em seu dispositivo.</p>
+                            <button id="btnIOS" class="btn btn-fill btn-neutral">
+                                <i class="fa fa-apple"></i> IOS
+                            </button>
+                            <button id="btnAndroid" class="btn btn-simple btn-neutral">
+                                <i class="fa fa-android"></i>
+                            </button>
+                            <button class="btn btn-simple btn-neutral" onclick="window.location.href='#download'">
+                                <i class="fa fa-windows"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section section-gray section-clients">
+            <div class="container text-center">
+                <img src="assets/img/logos/Icon_color.svg" alt="MyConsys" style="width: 80px;">
+                <h4 class="header-text">Principais Funcionalidades</h4>
+                <p>
+                    O portal oferece uma plataforma online para gestão de lojas, com um dashboard completo que permite
+                    visualizar vendas por filial, ranking de vendedores, total de vendas por forma de pagamento e ticket
+                    médio. Essas funcionalidades facilitam a gestão e o acompanhamento detalhado das métricas essenciais
+                    para o negócio.<br>
+                </p>
+                <div class="logos">
+                    <ul class="list-unstyled">
+                        <li><img src="assets/img/logos/a.png" width="70px" />
+                            <p class="small">Total de vendas por Filial</p>
+                        </li>
+                        <li><img src="assets/img/logos/b.png" width="70px" />
+                            <p class="small">Ticket médio</p>
+                        </li>
+                        <li><img src="assets/img/logos/c.png" width="70px" />
+                            <p class="small">Total de Atendimentos</p></i>
+                        </li>
+                        <li><img src="assets/img/logos/d.png" width="70px" />
+                            <p class="small">Vendas por Formas de Pagamento</p>
+                        </li>
+                        <li><img src="assets/img/logos/e.png" width="70px" />
+                            <p class="small">Ranking de Vendedores</p></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="section section-presentation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="description">
+                            <h4 class="header-text">Plataforma Intuitiva</h4>
+                            <p>O MyConsys é sinônimo de facilidade. Com uma interface limpa e intuitiva, você pode
+                                explorar todas as vantagens que nossa plataforma oferece. Focamos nos benefícios que
+                                nossos usuários recebem, combinando tabelas e gráficos para destacar capturas de tela
+                                significativas do nosso dashboard.<br><br>Essas demonstrações claras das funcionalidades
+                                básicas mostram como podemos enriquecer sua gestão de forma prática e eficaz.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-md-offset-1">
+                        <img id="pcImage" src="assets/img/template/mac.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section section-demo section-gray">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-offset-1 col-md-6 hidden-xs">
+                        <div id="description-carousel" class="carousel fade" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="item">
+                                    <img src="assets/img/template/examples/home_33.png" alt="">
+                                </div>
+                                <div class="item active">
+                                    <img src="assets/img/template/examples/home_11.png" alt="">
+                                </div>
+                                <div class="item">
+                                    <img src="assets/img/template/examples/home_22.png" alt="">
+                                </div>
+                            </div>
+                            <ol class="carousel-indicators carousel-indicators-blue">
+                                <li data-target="#description-carousel" data-slide-to="0" class=""></li>
+                                <li data-target="#description-carousel" data-slide-to="1" class="active"></li>
+                                <li data-target="#description-carousel" data-slide-to="2" class=""></li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-md-offset-1">
+                        <div class="description align-items-center">
+                            <h4 class="header-text">Descubra o Modo Noturno</h4>
+                            <p>
+                                Experimente o conforto do Modo Noturno no MyConsys! Gerencie suas operações com uma
+                                interface suave e adaptável, projetada para reduzir o cansaço visual e proporcionar uma
+                                experiência agradável em ambientes de pouca luz.
+                            </p>
+                            <a href="#" id="jumpButton" class="btn btn-fill btn-primary" data-button="info">Ative o
+                                Modo Noturno</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section section-features">
+            <div class="container text-center">
+                <img src="assets/img/logos/Icon_color.svg" alt="MyConsys" style="width: 80px;">
+                <h4 class="header-text">Conheça os benefícios</h4>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card card-blue">
+                            <div class="icon">
+                                <img src="assets/img/template/a1.svg">
+                            </div>
+                            <div class="text">
+                                <h4>Plataforma totalmente responsiva</h4>
+                                <p>Todas as funcionalidades se adaptam perfeitamente a <b>qualquer dispositivo</b>, seja
+                                    smarphone (Android ou IOS), tablet ou computador.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-blue">
+                            <div class="icon">
+                                <img src="assets/img/template/a2.svg">
+                            </div>
+                            <h4>Acesse em qualquer hora e lugar</h4>
+                            <p>Por ser uma <b>plataforma online</b> , você pode acessar o MyConsys em qualquer momento
+                                do dia e de onde você estiver.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-blue">
+                            <div class="icon">
+                                <img src="assets/img/template/a3.svg">
+                            </div>
+                            <h4>Gratuito para clientes Consys</h4>
+                            <p>Para você que já é cliente Consys, beneficie-se de todas as vantagens da plataforma
+                                myConsys <b>sem custos adicionais</b>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="download" class="section section-no-padding">
+            <div class="parallax filter-gradient blue" data-color="blue">
+                <div class="parallax-background">
+                </div>
+                <div class="info">
+                    <img src="assets/img/logos/Icon_white.svg" alt="MyConsys" style="width: 80px;">
+                    <h1>Baixe o myConsys no seu Computador</h1>
+                    <p>Você pode acessar o portal através do seu navegador, em qualquer lugar e a partir de qualquer
+                        dispositivo, seja smartphone, tablet ou computador. Se preferir, você também pode baixar o
+                        aplicativo para o seu computador e acessar diretamente da sua área de trabalho com apenas um
+                        clique.</p>
+                    <a id="btnPWA" href="#" class="btn btn-neutral btn-lg btn-fill">BAIXAR</a>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <nav class="pull-left">
+                    <ul>
+                        <li>
+                            <a href="https://myconsys.consysonline.com.br/login.php" target="_blank">
+                                Acesse aqui
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://consysonline.com.br/sitenovo/index.html" target="_blank">
+                                A Consys
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://consysonline.com.br/sitenovo/suporte.html" target="_blank">
+                                Suporte
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://consysonline.com.br/sitenovo/contato.html" target="_blank">
+                                Contato
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="social-area pull-right">
+                    <a class="btn btn-social btn-simple" href="https://www.facebook.com/consysonline" target="_blank">
+                        <i class="fa fa-facebook-square"></i>
+                    </a>
+                    <a class="btn btn-social btn-simple" href="https://www.instagram.com/consysoficial/"
+                        target="_blank">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                    <a class="btn btn-social btn-simple" href="https://www.linkedin.com/company/consysoficial"
+                        target="_blank">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                </div>
+                <div class="copyright">
+                    &copy; 2024, Desenvolvido por <a href="https://consysonline.com.br/sitenovo/index.html"
+                        target="_blank">Consys</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+<script src="assets/js/service-worker.js" type="text/javascript"></script>
+<script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="assets/js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
+<script src="assets/js/bootstrap.js" type="text/javascript"></script>
+<script src="assets/js/awesome-landing-page.js" type="text/javascript"></script>
+
+<script>
+    
+    function isNightTime() {
+        var now = new Date();
+        var hour = now.getHours();
+        return hour >= 18 || hour < 6; // Retorna verdadeiro se estiver entre 18:00 e 06:00
+    }
+    window.onload = function () {
+        if (isNightTime()) {
+            toggleDarkMode();
+        }
+    };
+
+    // Captura o elemento do botão
+    var btnModoNoturno = document.getElementById('btnModoNoturno1');
+
+    // Função para alternar o modo noturno
+    function toggleDarkMode() {
+        // Salva a posição atual da rolagem
+        var scrollPosition = window.scrollY;
+
+        // Adiciona a classe 'dark-mode' ao body
+        document.body.classList.toggle('dark-mode');
+
+        // Seleciona a seção section-clients
+        var sectionClients = document.querySelector('.section-clients');
+
+        const floatingButton = document.querySelector('.floating-button');
+        const floatingButtonIcon = floatingButton.querySelector('i');
+
+        if (document.body.classList.contains('dark-mode')) {
+            floatingButtonIcon.classList.remove('fa-moon-o');
+            floatingButtonIcon.classList.add('fa-sun-o');
+        } else {
+            floatingButtonIcon.classList.remove('fa-sun-o');
+            floatingButtonIcon.classList.add('fa-moon-o');
+        }
+
+        // Altera a cor de fundo da seção section-clients no Modo Noturno
+        if (document.body.classList.contains('dark-mode')) {
+            sectionClients.style.backgroundColor = '#111c44';
+            document.querySelector('.filter-gradient.blue').style.background = 'linear-gradient(220deg, #336699 0%, #333366 55%, #4c267d 100%)';
+        } else {
+            sectionClients.style.backgroundColor = ''; // Volta ao estilo original se o Modo Noturno for desativado
+            document.querySelector('.filter-gradient.blue').style.background = 'linear-gradient(220deg, #68cad4 0%, #6b8fc9 55%, #825ee4 100%)';
+        }
+
+        // Alterna entre as imagens
+        var phoneImage = document.getElementById('phoneImage');
+            var currentImage = phoneImage.getAttribute('src');
+
+            // Adiciona classe fade para efeito de transição
+            phoneImage.classList.add('fade');
+
+            // Espera a transição de fade antes de mudar a imagem
+            setTimeout(function () {
+                if (currentImage.includes('iphone3.png')) {
+                    phoneImage.src = './assets/img/template/iphone3_dark.png';
+                } else {
+                    phoneImage.src = './assets/img/template/iphone3.png';
+                }
+
+                // Remove classe fade após a transição
+                phoneImage.classList.remove('fade');
+            }, 500); // Aguarda 500ms (tempo definido na transição CSS)
+
+            // Repetir o mesmo processo para a imagem do PC
+            var pcImage = document.getElementById('pcImage');
+            var currentPcImage = pcImage.getAttribute('src');
+
+            pcImage.classList.add('fade');
+
+            setTimeout(function () {
+                if (currentPcImage.includes('mac.png')) {
+                    pcImage.src = './assets/img/template/mac_dark.png';
+                } else {
+                    pcImage.src = './assets/img/template/mac.png';
+                }
+
+                pcImage.classList.remove('fade');
+            }, 500); // Aguarda 500ms (tempo definido na transição CSS)
+
+
+            
+    }
+
+    // Adiciona um evento de clique ao botão
+    btnModoNoturno.addEventListener('click', function () {
+        event.preventDefault(); // Evita a ação padrão do botão (submit ou scroll)
+        // Mostra o elemento de loading
+        var loadingElement = document.getElementById('loading');
+        loadingElement.style.display = 'flex';
+
+        // Alterna o modo noturno
+        setTimeout(function () {
+            toggleDarkMode();
+            // Oculta o elemento de loading após um pequeno atraso para simular carregamento
+            loadingElement.style.display = 'none';
+        }, 2000); // Simula um atraso de 500ms
+    });
+
+    const jumpButton = document.getElementById('jumpButton');
+    const floatingButton = document.querySelector('.floating-button');
+
+    jumpButton.addEventListener('click', function () {
+        event.preventDefault(); // Evita a ação padrão do botão (submit ou scroll)
+        // Adiciona a classe jump para fazer o botão flutuante pular
+        floatingButton.classList.add('jump');
+
+        // Remove a classe jump após a animação terminar (500ms)
+        setTimeout(function () {
+            floatingButton.classList.remove('jump');
+        }, 500);
+    });
+
+    // Adiciona um evento de clique ao botão IOS
+    var btnIOS = document.getElementById('btnIOS');
+    btnIOS.addEventListener('click', function () {
+        var alertDiv = document.createElement('div');
+        alertDiv.className = 'alert alert-info alert-dismissible fixed-bottom';
+        alertDiv.role = 'alert';
+        alertDiv.innerHTML = `
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <i class="fa fa-apple"></i>
+        Acesse o aplicativo do MyConsys no seu iPhone ou iPad, pressione <img src="assets/img/logos/upload.png" style="width: 20px;"> e clique em Adicionar à Tela de Início.
+        <a href="https://myconsys.consysonline.com.br/login.php" target="_blank" class="btn btn-sm btn-fill btn-info" style="margin-left:10px;">Acessar</a>
+    `;
+
+        // Adiciona o alerta ao body
+        document.body.appendChild(alertDiv);
+
+        // Remove o alerta após 8 segundos
+        setTimeout(function () {
+            alertDiv.remove();
+        }, 15000);
+    });
+
+    // Adiciona um evento de clique ao botão Android
+    var btnAndroid = document.getElementById('btnAndroid');
+    btnAndroid.addEventListener('click', function () {
+        var alertDiv = document.createElement('div');
+        alertDiv.className = 'alert alert-info alert-dismissible fixed-bottom';
+        alertDiv.role = 'alert';
+        alertDiv.innerHTML = `
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <i class="fa fa-android"></i>
+        Adicione o aplicativo no seu dispositivo Android, acesse o site do MyConsys e clique em baixar.
+        <a href="https://myconsys.consysonline.com.br/login.php" target="_blank" class="btn btn-sm btn-fill btn-info" style="margin-left:10px;">Acessar</a>
+    `;
+
+        // Adiciona o alerta ao body
+        document.body.appendChild(alertDiv);
+
+        // Remove o alerta após 8 segundos
+        setTimeout(function () {
+            alertDiv.remove();
+        }, 15000);
+    });
+</script>
+<script>
+    let deferredPrompt;
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+        // Previna o mini-infobar de aparecer no celular
+        e.preventDefault();
+        // Guarde o evento para que ele possa ser acionado mais tarde.
+        deferredPrompt = e;
+        // Atualize a interface para notificar o usuário
+        document.getElementById('btnPWA').style.display = 'inline-block';
+    });
+
+    document.getElementById('btnPWA').addEventListener('click', async () => {
+        if (deferredPrompt) {
+            // Mostre o prompt de instalação
+            deferredPrompt.prompt();
+            // Espere pela resposta do usuário
+            const { outcome } = await deferredPrompt.userChoice;
+            // Opcionalmente, envie analytics sobre a escolha do usuário
+            console.log(`User response to the install prompt: ${outcome}`);
+            // Limpe a referência ao prompt, uma vez que ele não pode ser usado mais
+            deferredPrompt = null;
+        }
+    });
+
+    document.getElementById('btnPwaAndroid').addEventListener('click', async () => {
+        if (deferredPrompt) {
+            // Mostre o prompt de instalação
+            deferredPrompt.prompt();
+            // Espere pela resposta do usuário
+            const { outcome } = await deferredPrompt.userChoice;
+            // Opcionalmente, envie analytics sobre a escolha do usuário
+            console.log(`User response to the install prompt: ${outcome}`);
+            // Limpe a referência ao prompt, uma vez que ele não pode ser usado mais
+            deferredPrompt = null;
+        }
+    });
+
+    document.getElementById('btnPwaWindows').addEventListener('click', async () => {
+        if (deferredPrompt) {
+            // Mostre o prompt de instalação
+            deferredPrompt.prompt();
+            // Espere pela resposta do usuário
+            const { outcome } = await deferredPrompt.userChoice;
+            // Opcionalmente, envie analytics sobre a escolha do usuário
+            console.log(`User response to the install prompt: ${outcome}`);
+            // Limpe a referência ao prompt, uma vez que ele não pode ser usado mais
+            deferredPrompt = null;
+        }
+    });
+
+</script>
+
+</html>
