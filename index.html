@@ -97,21 +97,22 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.95);
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 1.5em;
             color: #333;
             z-index: 9999;
-            display: none;
+            display: none;            
+            transition: opacity 1s linear;
             /* Escondido por padrão */
         }
     </style>
 
 </head>
 
-<body class="landing-page landing-page1">
+<body class="landing-page landing-page1" style="display: none;">
     <a href="#" id="btnModoNoturno1" class="floating-button">
         <i class="fa fa-moon-o"></i> <!-- ícone de lua -->
     </a>
@@ -396,6 +397,28 @@
 
 <script>
     
+    // Mostra o elemento de loading
+    function showLoading() {
+        document.getElementById('loading').style.display = 'flex';
+    }
+
+    // Esconde o elemento de loading
+    function hideLoading() {
+        document.getElementById('loading').style.display = 'none';
+
+    }
+    document.body.style.display = 'block';
+    
+    // Exemplo de uso de loading para simular um carregamento assíncrono
+    showLoading(); // Mostra o loading
+
+    // Simula uma requisição assíncrona que leva 2 segundos para completar
+    setTimeout(function () {
+        // Após 2 segundos, esconde o loading
+        hideLoading();
+    }, 3000);
+
+
     function isNightTime() {
         var now = new Date();
         var hour = now.getHours();
@@ -443,41 +466,41 @@
 
         // Alterna entre as imagens
         var phoneImage = document.getElementById('phoneImage');
-            var currentImage = phoneImage.getAttribute('src');
+        var currentImage = phoneImage.getAttribute('src');
 
-            // Adiciona classe fade para efeito de transição
-            phoneImage.classList.add('fade');
+        // Adiciona classe fade para efeito de transição
+        phoneImage.classList.add('fade');
 
-            // Espera a transição de fade antes de mudar a imagem
-            setTimeout(function () {
-                if (currentImage.includes('iphone3.png')) {
-                    phoneImage.src = './assets/img/template/iphone3_dark.png';
-                } else {
-                    phoneImage.src = './assets/img/template/iphone3.png';
-                }
+        // Espera a transição de fade antes de mudar a imagem
+        setTimeout(function () {
+            if (currentImage.includes('iphone3.png')) {
+                phoneImage.src = './assets/img/template/iphone3_dark.png';
+            } else {
+                phoneImage.src = './assets/img/template/iphone3.png';
+            }
 
-                // Remove classe fade após a transição
-                phoneImage.classList.remove('fade');
-            }, 500); // Aguarda 500ms (tempo definido na transição CSS)
+            // Remove classe fade após a transição
+            phoneImage.classList.remove('fade');
+        }, 500); // Aguarda 500ms (tempo definido na transição CSS)
 
-            // Repetir o mesmo processo para a imagem do PC
-            var pcImage = document.getElementById('pcImage');
-            var currentPcImage = pcImage.getAttribute('src');
+        // Repetir o mesmo processo para a imagem do PC
+        var pcImage = document.getElementById('pcImage');
+        var currentPcImage = pcImage.getAttribute('src');
 
-            pcImage.classList.add('fade');
+        pcImage.classList.add('fade');
 
-            setTimeout(function () {
-                if (currentPcImage.includes('mac.png')) {
-                    pcImage.src = './assets/img/template/mac_dark.png';
-                } else {
-                    pcImage.src = './assets/img/template/mac.png';
-                }
+        setTimeout(function () {
+            if (currentPcImage.includes('mac.png')) {
+                pcImage.src = './assets/img/template/mac_dark.png';
+            } else {
+                pcImage.src = './assets/img/template/mac.png';
+            }
 
-                pcImage.classList.remove('fade');
-            }, 500); // Aguarda 500ms (tempo definido na transição CSS)
+            pcImage.classList.remove('fade');
+        }, 500); // Aguarda 500ms (tempo definido na transição CSS)
 
 
-            
+
     }
 
     // Adiciona um evento de clique ao botão
